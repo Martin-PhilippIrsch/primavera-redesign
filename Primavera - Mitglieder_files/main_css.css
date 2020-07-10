@@ -1,0 +1,291 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {}
+
+body {
+	background-image:url(../img/bg_body.jpg);
+	background-repeat:repeat-x;
+	background-color: #d9d9d9;
+	background-position:top;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+a {
+	text-decoration:underline;
+	color:#006c28;
+}
+
+.green {
+	background-image:url(../img/green_bg.gif);
+}
+img {
+	border:none;
+}
+
+	
+#pagecontainer {
+	margin:auto;
+	width:1000px;
+}
+
+#logo_container {
+	float:left;
+}
+
+
+#content_container {
+	float: left;
+	width:1000px;
+	background-color: #FFF;
+
+}
+
+#content_left_container {
+	float:left;
+	width:740px;
+}
+
+
+#content_right_container {
+	width:260px;
+	float: left;
+	background-color: #aad3ac;
+}
+
+#content_left_container #content_left {
+	padding-left:22px;
+	padding-top:30px;
+	padding-bottom:30px;	
+}
+#content_right_container #content_right {
+	padding-top:30px;
+	padding-left:19px;
+	padding-bottom:30px;
+}
+
+
+
+
+/*Text Bild Kombinationen*/
+
+#content_left_container .text_picture {
+	padding-bottom:38px;
+	float:left;
+	width:653px;
+}
+
+#content_left_container .text_picture .picture {
+	float:left;
+	padding-right:15px;
+	margin-bottom:5px;
+}
+
+#content_left_container .text_picture .text {
+	width:675px;
+	line-height:16px;
+}
+
+#content_left_container .text_picture .caption {
+	font-size:11px;
+	padding-top:3px;
+	color:#7d7d7d;
+
+}
+
+
+#content_left_container .headlines_container {
+	/*height:42px;*/
+	border-bottom: 1px solid #006c28;
+	margin-bottom:15px;
+	width:678px;
+	padding-bottom:3px;
+}
+
+
+#content_left_container h2 {
+	color:#006c28;
+	font-size:18px;
+	padding-bottom:6px;
+	
+}
+
+#content_left_container h3 {
+	color:#7d7d7d;
+	font-size:12px;
+	font-weight:bold;
+	padding-bottom:4px;
+	
+}
+
+#content_left_container .image_only {
+	padding-bottom:30px;}
+
+
+
+.image_bottom_text_top {
+	padding-bottom:14px;}
+	
+	
+	
+/* Marginalspalte */
+
+.marginal_element a {
+	text-decoration:underline;
+	color:#006c28;
+}
+
+.marginal_element a:hover {
+	color:#FFF;
+	text-decoration:none;
+}
+
+.marginal_element {
+	padding-bottom:23px;
+	line-height:16px;
+	width:220px;}
+
+.marginal_element .dateilink {	
+	background-image:url(../img/black_download_icon.gif);
+background-repeat: no-repeat;
+background-position: 0px 3px;	
+padding-left:15px;	
+}	
+	
+#content_right_container h2 {
+	font-weight:bold;
+	color: #006c28;
+}		
+
+.marginal_headline_container {
+	border-bottom: 1px solid #006c28;
+	padding-bottom:4px;
+	margin-bottom:8px;
+}
+
+.marginal_element ul {
+	padding-left:18px; 
+
+}
+.marginal_element ul li { 
+	padding-bottom:5px;
+}
+
+
+.marginal_element .text ul li { 
+	list-style-image:url(../img/green_bulletpoint.gif);
+}
+
+.marginal_element .list1  {
+	padding-left:19px;
+}
+
+.marginal_element .list1 li { 
+	list-style-image:url(../img/black_download_icon.gif);
+}
+
+
+
+/*News*/
+
+.news-element {
+font-size:12px;
+line-height:16px;
+padding-right:10px;
+}
+
+
+.morelink a {
+	text-decoration:underline;
+	color:#006c28;
+}
+
+.morelink a:hover {
+	color:#FFF;
+	text-decoration:none;
+}
+
+/*Tabelle*/
+
+td, th {
+padding-right:20px;
+padding-bottom:5px;
+padding-left:5px;
+padding-top:5px;}
+
+th {
+font-weight:bold;
+}
+
+td.col_odd, th.col_odd {
+background-color:#aad3ac}
+
+
+/*Form*/
+
+#name {
+	width:300px;
+}
+#email {
+	width:300px;
+}
+
+#contactformular {
+	z-index:0;
+}
+
+#newsletter {
+	padding:0px;
+	margin:0px;
+}
+
+#newsletter_container {
+	float:left;
+	width:295px;
+	margin-top:20px;
+}
+
+#newsletter_text_container {
+
+	float:left;
+	margin-top:-16px;
+	position: relative;	
+}
+
+#submitbutton_container {
+	float:left;
+	margin-top:13px;
+
+}
+
+* html #newsletter_container {
+	width:286px;
+	margin-top:5px;
+}
+
+* html #newsletter_text_container {
+	padding-top:25px;
+
+}
+
+* html #submitbutton_container {
+		margin-top:5px;
+}
+
+
+* + html #newsletter_container {
+	width:286px;
+	margin-top:5px;
+}
+
+* + html #newsletter_text_container {
+	padding-top:25px;
+}
+
+* + html #submitbutton_container {
+		margin-top:5px;
+}
+
+
+

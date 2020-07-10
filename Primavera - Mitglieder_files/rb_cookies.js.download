@@ -1,0 +1,23 @@
+/*
+ Copyright (c) 2015
+ Bosch Cookies Plugin v0.2a
+
+ Changelog
+ v0.1a
+    Initial release
+ v0.2a
+    Logger + cookie read
+ v0.3
+    Removed parameters
+v0.31  (by Webtrends / André Klug)
+debug log disabled
+
+v0.41 (by e-dynamics)
+    added privacy manager functionality
+
+v0.42 (by e-dynamics)
+    added privacy manager tracking request suppression
+
+*/
+
+(function(c,a){if(!c.Webtrends){return}var b={debug:false,parameters:{debug:false},loaded:false,init:function(e,g){try{b.logEntry("Starting boschCookiesPlugin");var d=new Date();function f(j){var k="; "+document.cookie;var l=k.split("; "+j+"=");if(l.length==2){return l.pop().split(";").shift()}else{return false}}function i(){var j=(typeof(pcbc)==="object"&&typeof(co_key)!=="undefined")?pcbc.read({key:co_key}):-1;b.logEntry("Bosch pcbc value: "+j);switch(j){case"0":e.enabled=false;e.FPCConfig.enabled=false;e.FPCConfig.expires=0;b.logEntry("Disable WT Tracking completely.");break;case"1":e.enabled=false;e.FPCConfig.enabled=false;e.FPCConfig.expires=0;b.logEntry("Disable WT Tracking completely.");break;case"2":e.enabled=false;e.FPCConfig.enabled=false;e.FPCConfig.expires=0;b.logEntry("Disable WT Tracking completely.");break;case"3":e.FPCConfig.enabled=true;e.FPCConfig.expires=31536000000;b.logEntry("Setting FPC cookie expiration to 1 year.");break;case"4":e.FPCConfig.enabled=true;e.FPCConfig.expires=31536000000;b.logEntry("Setting FPC cookie expiration to 1 year.");break;default:b.logEntry("Cannot parse pcbc cookie value, reverting to default session only behaviour");if(f("privacy-accepted")==="1"){e.FPCConfig.enabled=true;e.FPCConfig.expires=31536000000}else{e.enabled=false;e.FPCConfig.enabled=false;e.FPCConfig.expires=0}break}e.FPCConfig.expiry=e.FPCConfig.expires;e.FPCConfig.expiry=(e.FPCConfig.expiry<63113851500)?e.FPCConfig.expiry:63113851500;e.FPCConfig.expireDate=new Date((new Date()).getTime()+e.FPCConfig.expiry);e.FPCConfig.sessionOnly=(e.FPCConfig.expiry===0);e.TPCConfig.enabled=true;e.TPCConfig.cfgType="2"}i();if(e.config.cookieTypes){if(e.config.cookieTypes.toLowerCase()==="none"){e.FPCConfig.enabled=false;e.TPCConfig.enabled=false;e.TPCConfig.cfgType="1"}else{if(e.config.cookieTypes.toLowerCase()==="firstpartyonly"){e.FPCConfig.enabled=true;e.TPCConfig.enabled=false;e.TPCConfig.cfgType="1"}else{if(e.config.cookieTypes.toLowerCase()==="all"){e.FPCConfig.enabled=true;e.TPCConfig.enabled=true;e.TPCConfig.cfgType=sdcfg(e.config.TPCConfig,"cfgType","")}}}}this.loaded=true;b.logEntry("boschCookiesPlugin started");if(typeof jQuery==="function"){jQuery("#cookieInformation a.btn.btnWhite.conoset").on("click",function(){setTimeout(function(){i();_ed.edMultiTrack("DCS.dcsuri","/event_click/privacy_manager_config_changed.evt","WT.ti","Privacy Manager Config Changed","WT.dl","1002")},500)});jQuery(".module-cookie-bar button.action-accept-cookies").on("click",function(){setTimeout(function(){i();_ed.edMultiTrack("DCS.dcsuri","/event_click/privacy_manager_config_changed.evt","WT.ti","Privacy Manager Config Changed","WT.dl","1002")},500)})}}catch(h){b.logEntry("Exception executing plugin: "+h)}},event_track:function(d,f){try{}catch(g){}},addEvent:function(e,f,d){},bind_events:function(e,d){},logEntry:function(d){if(b.parameters.debug){console.log("boschCookiesPlugin:    "+d)}},readCookie:function(){}};Webtrends.registerPlugin("cookies",b.init)})(window,window.document);

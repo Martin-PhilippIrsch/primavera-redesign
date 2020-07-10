@@ -1,0 +1,7 @@
+$(document).ready(function() {
+	/*var hoehe = $("#content_left_container").height();
+	
+	if($("#content_right_container").height() < $("#content_left_container").height()){
+		$("#content_right_container").css("height", hoehe);
+	}*/
+});
